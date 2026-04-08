@@ -1,0 +1,43 @@
+/* Базові налаштування */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* #quiz-screen{
+    
+}
+
+#result-screen{
+    
+}
+
+#start-screen{
+    
+}
+
+#start-btn{
+    
+}
+
+#restart-btn{
+    
+} */
+
+.hide{
+    display: none;
+}
+
+.correct{
+  background-color: green;  
+}
+
+.wrong{
+    background-color: red;
+}
