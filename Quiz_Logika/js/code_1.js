@@ -60,10 +60,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const resultScreen = document.querySelector('#result-screen')
     const startBTN = document.querySelector('#start-btn')
     const resBTN = document.querySelector('#restart-btn')
+    const scoreDisplay = document.querySelector('#score-display')
+    const timeDisplay = document.querySelector('#timer')
     
     
     let questionIndex = 0
     let score = 0
+
+    let timer_ = 20
+    let inter_val
     
     function StartGame() {
         startScreen.classList.add("hide");
@@ -71,10 +76,13 @@ document.addEventListener('DOMContentLoaded', () => {
         resultScreen.classList.add("hide");
         score = 0;
         questionIndex = 0;
+        scoreDisplay.innerText = `Бали: ${score}`;
         showQuestion(questions[questionIndex]);
     }
     
     function showQuestion(question) {
+        clearInterval(inter_val)
+        startTime()
         answersContainer.innerHTML = ""
         questionText.innerText = question.question
         
@@ -102,6 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function checkAnswer(button, answerIndex) {
         if (answerIndex === questions[questionIndex].correct) {
             score++;
+            scoreDisplay.innerText = `Бали: ${score}`;
             button.classList.add('correct');
         } else {
             button.classList.add('wrong');
@@ -112,11 +121,29 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function showResult(){
+        const accuracy = Math.round((score / questions.length) * 100);
         quizScreen.classList.add("hide");
         resultScreen.classList.remove("hide");
-        document.querySelector('#result-text').innerText = `Твій результат: ${score} з ${questions.length}`;
+        document.querySelector('#result-text').innerText = `Твій результат: ${score} з ${questions.length} (${accuracy}%)`;
     }
     
+    function startTime(){
+        timer_ = 20
+        timeDisplay.innerText = `Час: ${timer_}`
+        inter_val = setInterval(()=>{
+            timer_--
+            timeDisplay.innerText = `Час: ${timer_}`
+
+            if(timer_ <= 0){
+                clearInterval(inter_val)
+                nextQ()
+            }
+        }, 1000)
+    }
+
+
+
+
     startBTN.addEventListener('click', StartGame);
     resBTN.addEventListener('click', StartGame);
     
