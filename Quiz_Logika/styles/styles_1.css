@@ -1,13 +1,22 @@
 /* Базові налаштування */
 body {
+    min-height: 100vh;
     font-family: 'Arial', sans-serif;
-    background-color: #ffffff;
+    background-color: #f3f0e0;
     color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    margin: 0;
+    /* font-family: Bold; */
+}
+
+.app-container{
+    flex-grow: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
 }
 
 /* #quiz-screen{
@@ -20,24 +29,101 @@ body {
 
 #start-screen{
     
-}
+} */
 
 #start-btn{
-    
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 93%;
+    text-transform: uppercase;
+    color: grey;
+    padding: 50px;
+    width: 500px;
 }
 
+#start-btn:hover {
+    background-color: #484848;
+    color: rgb(81, 148, 73);
+}
+
+
 #restart-btn{
-    
-} */
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 93%;
+    text-transform: uppercase;
+    color: grey;
+    padding: 40px;
+}
+
+#restart-btn:hover {
+    background-color: #484848;
+    color: rgb(81, 148, 73);
+}
+
+
+.answer-btn {
+    border: 1px solid #000;
+    border-radius: 200px;
+    width: 305px;
+    height: 50px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 120%;
+    text-align: center;
+    color: #ffffff;
+    background: rgb(62, 88, 59);
+}
+
+.answer-btn:hover {
+    background-color: rgb(226, 133, 12);
+    color: rgb(0, 0, 0);
+    box-shadow: 0 8px 20px rgb(0, 0, 0);
+}
 
 .hide{
     display: none;
 }
 
 .correct{
-  background-color: green;  
+    background-color: rgb(255, 255, 255);
+    color: rgb(35, 151, 20);
+    box-shadow: 0 8px 20px rgb(35, 151, 20);  
 }
 
 .wrong{
-    background-color: red;
+    background-color: black;
+    color: red;
+    box-shadow: 0 8px 20px red;
+}
+
+h1{
+    font-size: 80px;
+    text-align: center;
+}
+
+h2{
+    font-size: 60px;
+    text-align: center;
+}
+
+.ha {
+    height: 150px;
+    width: 100%;
+    background-image: url("img_/Mavka_ua.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.ha_2 {
+    margin-top: auto;
+    height: 150px;
+    width: 100%;
+    background-image: url("img_/мм_14.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
